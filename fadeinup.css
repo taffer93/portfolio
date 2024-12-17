@@ -1,0 +1,11 @@
+/* fadeinup.css - Animacja fade-in-up */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.8s ease-out, transform 1.8s ease-out;
+}
+
+.fade-in-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,94 @@
+@import 'variables.css';
+@import 'animations/button-animations.css';
+
+/* Base button styles */
+.button {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  background-color: transparent;
+  color: var(--accent-primary);
+  text-decoration: none;
+  border: 2px solid var(--accent-primary);
+  border-radius: 30px;
+  font-weight: 600;
+  transition: var(--transition);
+  position: relative;
+
+  z-index: 1;
+}
+
+/* Gradient border button */
+.button-gradient {
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary), var(--accent-primary));
+  background-size: 200% 100%;
+  animation: borderDance 3s ease infinite;
+  border: none;
+  padding: calc(1rem + 2px) calc(2rem + 2px);
+  color: var(--bg-primary);
+}
+
+/* Glowing button */
+.button-glow {
+  animation: glowPulse 2s infinite;
+  background: transparent;
+}
+
+.button-glow:hover {
+  animation: glowPulse 1s infinite;
+  transform: translateY(-2px);
+}
+
+/* Shimmer effect button */
+.button-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 105, 180, 0.2),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+  margin-top: 2rem;
+}
+
+/* Pulse effect button */
+.button-pulse {
+  animation: pulse 2s infinite;
+}
+
+.button-pulse:hover {
+  animation: none;
+  transform: scale(1.05);
+}
+
+/* Filled button with hover effect */
+.button-filled {
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+.button-filled:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+}
+
+/* Common hover effects */
+.button:hover {
+  transform: translateY(-2px);
+  background-color: whitesmoke;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.25);
+  animation: glowPulse 2s infinite;
+}
+
+/* Button sizes */
+.button-large {
+  padding: 1.2rem 2.4rem;
+  font-size: 1.1rem;
+}
+
+.button-small {
+  padding: 0.8rem 1.6rem;
+  font-size: 0.9rem;
+}

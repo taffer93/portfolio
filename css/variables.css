@@ -1,0 +1,22 @@
+:root {
+  /* Base colors */
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --bg-overlay: #2d2d2d;
+  
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  
+  /* Accent colors */
+  --accent-primary: #ff69b4;    /* Hot pink */
+  --accent-secondary: #ff8ac1;  /* Light pink */
+  --accent-hover: #ff4d94;     /* Darker pink for hover states */
+  
+  /* UI colors */
+  --nav-bg: rgba(26, 26, 26, 0.95);
+  --card-bg: #2d2d2d;
+  
+  /* Animation */
+  --transition: all 0.3s ease;
+}

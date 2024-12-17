@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "servor --reload"
+  },
+  "dependencies": {
+    "servor": "^4.0.2",
+    "three": "^0.134.0",
+    "vanta": "^0.5.24"
+  }
+}
