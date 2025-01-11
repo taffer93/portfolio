@@ -41,14 +41,13 @@
 
 .lightbox-caption {
   position: absolute;
-  bottom: -150px;
+  bottom: -30px;
   left: 0;
   width: 100%;
-  padding: 10px;
   color: var(--text-primary);
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(50px);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
   border-radius: 0 0 4px 4px;
 }
 

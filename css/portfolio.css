@@ -7,9 +7,23 @@
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* 3 obrazy w wierszu na szerokich ekranach */
   gap: 2rem;
   margin-top: 2rem;
+}
+
+/* Jeśli szerokość okna jest mniejsza niż 800px, wyświetlane będą 2 obrazy w wierszu */
+@media (max-width: 1200px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Jeśli szerokość okna jest mniejsza niż 500px, wyświetlany będzie tylko 1 obraz w wierszu */
+@media (max-width: 500px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .portfolio-item {

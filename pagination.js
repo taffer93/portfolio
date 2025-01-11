@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const itemsPerPage = 6; // Liczba obrazów na stronę
+  const itemsPerPage = 9; // Liczba obrazów na stronę
   const portfolioItems = document.querySelectorAll(".portfolio-item");
   const totalItems = portfolioItems.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const prevButton = document.getElementById("prev-page");
   const nextButton = document.getElementById("next-page");
+  const workSection = document.getElementById("work"); // Sekcja, do której chcemy przewinąć
 
   // Funkcja pokazująca elementy tylko z aktywnej strony
   function showPage(page) {
@@ -27,11 +28,17 @@ document.addEventListener("DOMContentLoaded", function () {
     nextButton.disabled = page === totalPages;
   }
 
+  // Funkcja przewijania do sekcji
+  function scrollToWorkSection() {
+    workSection.scrollIntoView({ behavior: "smooth" }); // Płynne przewijanie do sekcji
+  }
+
   // Obsługa kliknięcia "Następna"
   nextButton.addEventListener("click", () => {
     if (currentPage < totalPages) {
       currentPage++;
       showPage(currentPage);
+      scrollToWorkSection(); // Po kliknięciu "Next" przewijamy do sekcji
     }
   });
 
@@ -40,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentPage > 1) {
       currentPage--;
       showPage(currentPage);
+      scrollToWorkSection(); // Po kliknięciu "Previous" przewijamy do sekcji
     }
   });
 
