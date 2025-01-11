@@ -17,17 +17,16 @@ export class Lightbox {
     lightbox.innerHTML = `
       <div class="lightbox-content">
         <img class="lightbox-image" src="" alt="">
-        <div class="lightbox-caption"></div>
-        <button class="lightbox-close">&times;</button>
-        <div class="lightbox-nav">
-          <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
-          <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+        <div class="lightbox-caption">
+          <h3></h3>
+          <p></p>
         </div>
+        <button class="lightbox-close">&times;</button>
         <div class="lightbox-loader"></div>
       </div>
     `;
     document.body.appendChild(lightbox);
-    
+
     this.lightbox = lightbox;
     this.image = lightbox.querySelector('.lightbox-image');
     this.caption = lightbox.querySelector('.lightbox-caption');
@@ -78,22 +77,15 @@ export class Lightbox {
 
   initializeControls() {
     this.lightbox.querySelector('.lightbox-close').addEventListener('click', () => this.close());
-    this.lightbox.querySelector('.lightbox-prev').addEventListener('click', () => this.prev());
-    this.lightbox.querySelector('.lightbox-next').addEventListener('click', () => this.next());
 
     document.addEventListener('keydown', (e) => {
       if (!this.lightbox.classList.contains('active')) return;
-      
+
       switch (e.key) {
         case 'Escape':
           this.close();
           break;
-        case 'ArrowLeft':
-          this.prev();
-          break;
-        case 'ArrowRight':
-          this.next();
-          break;
+        // Usunięcie kontroli klawiszy na poprzedni/następny obraz
       }
     });
   }
@@ -111,22 +103,10 @@ export class Lightbox {
     document.body.style.overflow = '';
   }
 
-  prev() {
-    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-    this.loadImage(this.images[this.currentIndex].src);
-    this.updateCaption();
-  }
-
-  next() {
-    this.currentIndex = (this.currentIndex + 1) % this.images.length;
-    this.loadImage(this.images[this.currentIndex].src);
-    this.updateCaption();
-  }
-
   loadImage(src) {
     this.loader.style.display = 'block';
     this.image.style.opacity = '0';
-    
+
     const img = new Image();
     img.onload = () => {
       this.image.src = src;
