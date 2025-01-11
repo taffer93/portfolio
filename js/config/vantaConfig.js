@@ -42,7 +42,7 @@ const network = {
 const controls = {
   mouseControls: true,
   touchControls: true,
-  gyroControls: true
+  gyroControls: false
 };
 
 // Adjust spacing dynamically for mobile devices

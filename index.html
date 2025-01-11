@@ -17,6 +17,42 @@
     <!-- Load our application script last -->
     <script type="module" src="script.js"></script>
     <script src="fadeinup.js" defer></script>
+
+    <style>
+    #pagination-controls {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    #pagination-controls button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #pagination-controls button:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+
+    #pagination-controls button:hover:not(:disabled) {
+      background-color: #555;
+    }
+
+    .portfolio-item {
+      display: none; /* Ukrywamy elementy domyślnie */
+    }
+
+    .portfolio-item.visible {
+      display: block; /* Pokazujemy elementy na aktywnej stronie */
+    }
+  </style>
+
   </head>
   <body>
     <nav>
@@ -42,59 +78,130 @@
       <div class="portfolio-grid">
 
         <div class="portfolio-item fade-in-up">
-          <img src="https://picsum.photos/600/400?random=1" alt="Project 1">
+          <img src="https://raw.githubusercontent.com/taffer93/portfolio/refs/heads/main/images/piranha.png" alt="Project 1">
           <div class="portfolio-overlay">
-            <h3>Brand Identity</h3>
-            <p>Corporate branding and visual identity design</p>
+            <h3>WipeOut3 Piranha</h3>
+            <p>Piranha craft from PSX game WipeOut3 modelled and rendered in Blender. Textures created in Substance Painter. Post production made in Photoshop.</p>
             <a href="#" class="button button-shimmer button-small">View Project</a>
           </div>
         </div>
 
         <div class="portfolio-item fade-in-up">
-          <img src="https://picsum.photos/600/400?random=1" alt="Project 1">
+          <img src="https://raw.githubusercontent.com/taffer93/portfolio/refs/heads/main/images/black%20final.jpg" alt="Project 2">
           <div class="portfolio-overlay">
-            <h3>Brand Identity</h3>
-            <p>Corporate branding and visual identity design</p>
+            <h3>Black vase</h3>
+            <p>Black vase material created and rendered in Blender. Post production made in Photoshop.</p>
             <a href="#" class="button button-shimmer button-small">View Project</a>
           </div>
         </div>
 
         <div class="portfolio-item fade-in-up">
-          <img src="https://picsum.photos/600/400?random=1" alt="Project 1">
+          <img src="https://github.com/taffer93/portfolio/blob/main/images/bmwe39final.jpg?raw=true" alt="Project 3">
           <div class="portfolio-overlay">
-            <h3>Brand Identity</h3>
-            <p>Corporate branding and visual identity design</p>
+            <h3>BMW E39</h3>
+            <p>My first car i`ve modelled and also rendered in Blender. Post production made in Photoshop.</p>
             <a href="#" class="button button-shimmer button-small">View Project</a>
           </div>
         </div>
 
         <div class="portfolio-item fade-in-up">
-          <img src="https://picsum.photos/600/400?random=2" alt="Project 2">
+          <img src="https://github.com/taffer93/portfolio/blob/main/images/einhander.jpg?raw=true" alt="Project 4">
           <div class="portfolio-overlay">
-            <h3>Digital Illustration</h3>
-            <p>Custom illustration series for web and print</p>
+            <h3>Einhander</h3>
+            <p>Aircraft from PSX game Einhander. I`ve modelled and rendered it in Blender. Post production made in Photoshop.</p>
             <a href="#" class="button button-shimmer button-small">View Project</a>
           </div>
         </div>
 
         <div class="portfolio-item fade-in-up">
-          <img src="https://picsum.photos/600/400?random=3" alt="Project 3">
+          <img src="https://github.com/taffer93/portfolio/blob/main/images/riviva002post2.jpg?raw=true" alt="Project 5">
           <div class="portfolio-overlay">
-            <h3>UI/UX Design</h3>
-            <p>Mobile app interface and user experience design</p>
+            <h3>Apple juice bottle</h3>
+            <p>Apple juice bottle that i`ve modelled and rendered in Blender. Label texture i`ve made using my phone camera and then correcting it in Photoshop.</p>
             <a href="#" class="button button-shimmer button-small">View Project</a>
           </div>
         </div>
 
         <div class="portfolio-item fade-in-up">
-        <img src="https://picsum.photos/600/400?random=3" alt="Project 3">
+        <img src="https://github.com/taffer93/portfolio/blob/main/images/shadowmaster.jpg?raw=true" alt="Project 3">
         <div class="portfolio-overlay">
-          <h3>UI/UX Design</h3>
-          <p>Mobile app interface and user experience design</p>
+          <h3>Shadow Master</h3>
+          <p>Thats my remake of one frame from PSX game Shadow Master. I`ve modelled it and rendered in Blender. Textures are made in Photoshop. Also i`ve upscaled it by using Topaz Gigapixel.</p>
           <a href="#" class="button button-shimmer button-small">View Project</a>
         </div>
       </div>
+
+      <div class="portfolio-item fade-in-up">
+      <img src="https://github.com/taffer93/portfolio/blob/main/images/toytrain.jpg?raw=true" alt="Project 3">
+      <div class="portfolio-overlay">
+        <h3>Toy train</h3>
+        <p>Simple toy train i`ve modelled and rendered in Blender.</p>
+        <a href="#" class="button button-shimmer button-small">View Project</a>
+      </div>
     </div>
+
+    <div class="portfolio-item fade-in-up">
+    <img src="https://github.com/taffer93/portfolio/blob/main/images/oppo%20reno%2012%20pro%20cover%20case-01.jpg?raw=true" alt="Project 3">
+    <div class="portfolio-overlay">
+      <h3>Oppo Reno 12 Pro Cover case</h3>
+      <p>Two versions of cover case for Oppo Reno 12 Pro, rendered in Blender.</p>
+      <a href="#" class="button button-shimmer button-small">View Project</a>
+    </div>
+  </div>
+
+  <div class="portfolio-item fade-in-up">
+  <img src="https://github.com/taffer93/portfolio/blob/main/images/004final.jpg?raw=true" alt="Project 3">
+  <div class="portfolio-overlay">
+    <h3>Woman</h3>
+    <p>I`ve created it in Blender and also i`ve used GlobalSkin plugin for better result.</p>
+    <a href="#" class="button button-shimmer button-small">View Project</a>
+  </div>
+</div>
+
+<div class="portfolio-item fade-in-up">
+  <img src="https://github.com/taffer93/portfolio/blob/main/images/render029.jpg?raw=true" alt="Project 2">
+  <div class="portfolio-overlay">
+    <h3>Stand Project</h3>
+    <p>Go to external page</p>
+    <a href="#" class="button button-shimmer button-small external-link" data-href="page2.html">View Project</a>
+  </div>
+</div>
+
+<div class="portfolio-item fade-in-up">
+<img src="https://github.com/taffer93/portfolio/blob/main/images/render001.jpg?raw=true" alt="Project 2">
+<div class="portfolio-overlay">
+  <h3>Hanging decoration</h3>
+  <p>Go to external page</p>
+  <a href="#" class="button button-shimmer button-small external-link" data-href="page3.html">View Project</a>
+</div>
+</div>
+
+<div class="portfolio-item fade-in-up">
+<img src="https://github.com/taffer93/portfolio/blob/main/images/render029.jpg?raw=true" alt="Project 2">
+<div class="portfolio-overlay">
+  <h3>Hanging decoration</h3>
+  <p>Go to external page</p>
+  <a href="#" class="button button-shimmer button-small external-link" data-href="page4.html">View Project</a>
+</div>
+</div>
+
+<div class="portfolio-item fade-in-up">
+<img src="https://github.com/taffer93/portfolio/blob/main/images/dl%20card%20thumb.jpg?raw=true" data src="https://github.com/taffer93/portfolio/blob/main/images/dl%20card.jpg?raw=true" alt="Project 3">
+<div class="portfolio-overlay">
+  <h3>DL card</h3>
+  <p>I`ve created it in Blender and also i`ve used GlobalSkin plugin for better result.</p>
+  <a href="#" class="button button-shimmer button-small">View Project</a>
+</div>
+</div>
+
+
+    </div>
+
+    <div id="pagination-controls">
+    <button id="prev-page" disabled>Previous page</button>
+    <button id="next-page">Next page</button>
+  </div>
+
     </section>
 
     <section id="about" class="about-section fade-in-up">
@@ -104,11 +211,11 @@
         <div class="skills">
           <span>Brand Design</span>
           <span>Digital Illustration</span>
-          <span>UI/UX Design</span>
-          <span>Typography</span>
+          <span>3D Design</span>
+          <span>DTP</span>
           <span>Motion Graphics</span>
         </div>
-        <a href="#contact" class="button button-glow button-large">Let's Work Together</a>
+        <a href="sendemail.html" class="button button-glow button-large">Let's Work Together</a>
       </div>
     </section>
 
@@ -126,5 +233,7 @@
     <footer>
       <p>&copy; 2024 Mateusz Olejnik. All rights reserved.</p>
     </footer>
+
+    <script src="pagination.js" defer></script>
   </body>
 </html>

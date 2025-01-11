@@ -32,6 +32,8 @@ export class Lightbox {
     this.image = lightbox.querySelector('.lightbox-image');
     this.caption = lightbox.querySelector('.lightbox-caption');
     this.loader = lightbox.querySelector('.lightbox-loader');
+
+    this.image.addEventListener('click', () => this.openInNewWindow());
   }
 
   initializePortfolioButtons() {
@@ -42,13 +44,32 @@ export class Lightbox {
       description: item.querySelector('p').textContent
     }));
 
-    // Only attach click handlers to the View Project buttons
     portfolioItems.forEach((item, index) => {
       const viewButton = item.querySelector('.button-shimmer');
+      const image = item.querySelector('img');
+
       if (viewButton) {
-        viewButton.addEventListener('click', (e) => {
+        if (viewButton.classList.contains('external-link')) {
+          // Przeniesienie na inną stronę
+          viewButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // Zapobiega aktywowaniu lightboxa
+            const url = viewButton.dataset.href || 'https://example.com'; // Pobiera URL z data-href
+            window.location.href = url;
+          });
+        } else {
+          // Otwieranie w lightboxie
+          viewButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            this.open(index);
+          });
+        }
+      }
+
+      if (image) {
+        // Otwieranie obrazu w lightboxie
+        image.addEventListener('click', (e) => {
           e.preventDefault();
-          e.stopPropagation(); // Prevent event bubbling
           this.open(index);
         });
       }
@@ -63,7 +84,7 @@ export class Lightbox {
     document.addEventListener('keydown', (e) => {
       if (!this.lightbox.classList.contains('active')) return;
       
-      switch(e.key) {
+      switch (e.key) {
         case 'Escape':
           this.close();
           break;
@@ -121,5 +142,10 @@ export class Lightbox {
       <h3>${caption}</h3>
       <p>${description}</p>
     `;
+  }
+
+  openInNewWindow() {
+    const src = this.images[this.currentIndex].src;
+    window.open(src, '_blank');
   }
 }

@@ -1,3 +1,5 @@
+/* Add loader import to existing imports */
+@import 'css/components/loader.css';
 @import 'css/variables.css';
 @import 'css/base.css';
 @import 'css/typography.css';
